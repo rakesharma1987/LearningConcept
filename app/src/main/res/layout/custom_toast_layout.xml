@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:id="@+id/mylayout"
+    android:orientation="horizontal"
+    android:background="@drawable/capsule_shap"
+    android:layout_marginLeft="50dp"
+    android:layout_marginRight="50dp"
+    >
+
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:src="@drawable/ic_alarm"
+        android:id="@+id/imageview"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:text="My message"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:layout_marginLeft="20dp"
+        />
+
+</LinearLayout>

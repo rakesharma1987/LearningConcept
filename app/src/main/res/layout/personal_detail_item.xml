@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="@color/design_default_color_background"
+    android:layout_margin="10dp"
+    >
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvName"
+        android:text="Name : Rakesh Kumar"
+        android:textStyle="bold"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvEmail"
+        android:text="Email : kumar@gmail.com"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvName"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvPhone"
+        android:text="Mobile : 9625033237"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvEmail"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvGender"
+        android:text="Gender : M"
+        android:textStyle="bold"
+        android:layout_below="@+id/tvEmail"
+        android:layout_toRightOf="@+id/tvPhone"
+        android:layout_marginLeft="20dp"
+        />
+
+</RelativeLayout>
+</androidx.cardview.widget.CardView>
+</layout>

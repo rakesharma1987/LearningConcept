@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/fragment1"
+        android:title="nav Menu 1"
+        android:icon="@drawable/ic_profile"
+        />
+
+    <item android:id="@+id/fragment2"
+        android:title="nav Menu 2"
+        android:icon="@drawable/ic_profile"
+        />
+
+    <item android:id="@+id/fragment3"
+        android:title="nav Menu 3"
+        android:icon="@drawable/ic_profile"
+        />
+
+    <item android:id="@+id/fragment4"
+        android:title="nav Menu 4"
+        android:icon="@drawable/ic_profile"
+        />
+</menu>
