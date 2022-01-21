@@ -41,6 +41,11 @@ public class ListAdapter extends BaseAdapter {
         this.listener = listener;
     }
 
+    public ListAdapter(Activity activity, List<Persons> personalData) {
+        this.personalData = personalData;
+        this.activity = activity;
+    }
+
     @Override
     public int getCount() {
         return personalData.size();
@@ -53,7 +58,7 @@ public class ListAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return position;
+        return 0;
     }
 
     @NonNull
@@ -88,12 +93,12 @@ public class ListAdapter extends BaseAdapter {
         phone.setText(personalData.get(position).getPhone());
         gender.setText(personalData.get(position).getGender());
 
-        convertView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (listener != null) listener.onItemClick(personalData, position);
-            }
-        });
+//        convertView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (listener != null) listener.onItemClick(personalData, position);
+//            }
+//        });
         return convertView;
     }
 

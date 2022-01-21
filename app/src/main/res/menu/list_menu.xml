@@ -7,4 +7,7 @@
     <item
         android:id="@+id/itemDelete"
         android:title="Delete"/>
+    <item android:id="@+id/itemDeleteAllRecords"
+        android:title="Delete All Records"
+        />
 </menu>

@@ -60,8 +60,8 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
                 dbAdapter.insertData(context, binding.etFname.getText().toString(), binding.etLname.getText().toString(), binding.etEmail.getText().toString(), binding.etPhone.getText().toString(), radioButton.getText().toString(), imageDataBase64);
                 break;
             case R.id.btnShowPersonList:
-//                startActivity(new Intent(context, PersonalDetailsList.class));
-                startActivity(new Intent(context, RecyclerviewActivity.class));
+                startActivity(new Intent(context, PersonalDetailsList.class));
+//                startActivity(new Intent(context, RecyclerviewActivity.class));
                 break;
 
             case R.id.imgView:

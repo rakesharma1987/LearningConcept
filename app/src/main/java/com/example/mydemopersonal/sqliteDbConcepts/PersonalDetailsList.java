@@ -8,6 +8,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -35,7 +36,7 @@ import com.google.firebase.database.core.utilities.Utilities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PersonalDetailsList extends AppCompatActivity{
+public class PersonalDetailsList extends AppCompatActivity implements AdapterView.OnItemLongClickListener {
 
     private ActivityPersonalDetailsListBinding binding;
     private ListAdapter listAdapter;
@@ -45,6 +46,7 @@ public class PersonalDetailsList extends AppCompatActivity{
     private int clickedPosition;
     RadioButton radioButton;
     private ListAdapter adapter;
+    private String selectedRadioButtonText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,17 +56,16 @@ public class PersonalDetailsList extends AppCompatActivity{
         dbAdapter = new DBAdapter(context);
         dbAdapter.openDatabase();
         loadData();
-        registerForContextMenu(binding.list);
         //todo : listener on listview
+        binding.list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                Persons persons = (Persons) adapterView.getItemAtPosition(position);
+                Util.showCustomToast(context, persons.getFirstName());
+            }
+        });
 
-//        binding.list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                Persons persons = (Persons) adapterView.getItemAtPosition(position);
-//                Util.showCustomToast(context, persons.getFirstName());
-//                clickedPosition = position;
-//            }
-//        });
+        binding.list.setOnItemLongClickListener(this);
 
         registerForContextMenu(binding.list);
     }
@@ -94,13 +95,14 @@ public class PersonalDetailsList extends AppCompatActivity{
         if (getAllPersonData().size() == 0) binding.llNoData.setVisibility(View.VISIBLE);
         // todo : seeting data to the list and adding listener to the listview
 
-        listAdapter = new ListAdapter(PersonalDetailsList.this, getAllPersonData(), new OnItemClickListener() {
-            @Override
-            public void onItemClick(List<Persons> personsList, int position) {
-                Util.showCustomToast(PersonalDetailsList.this, ""+position);
-            }
-        });
+//        listAdapter = new ListAdapter(PersonalDetailsList.this, getAllPersonData(), new OnItemClickListener() {
+//            @Override
+//            public void onItemClick(List<Persons> personsList, int position) {
+//                Util.showCustomToast(PersonalDetailsList.this, ""+position);
+//            }
+//        });
 
+        listAdapter = new ListAdapter(PersonalDetailsList.this, getAllPersonData());
         binding.list.setAdapter(listAdapter);
     }
 
@@ -115,10 +117,19 @@ public class PersonalDetailsList extends AppCompatActivity{
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.itemDelete:
+                cursor.moveToPosition(clickedPosition);
+                String rowId = cursor.getString(0);
+                dbAdapter.deleteSingleRecord(PersonalDetailsList.this, rowId);
 
+                loadData();
                 break;
             case R.id.itemUpdate:
                 showUpdateDialog();
+                break;
+
+            case R.id.itemDeleteAllRecords:
+                dbAdapter.deleteAllRecords(PersonalDetailsList.this);
+                loadData();
                 break;
         }
         return true;
@@ -153,16 +164,23 @@ public class PersonalDetailsList extends AppCompatActivity{
         binding.rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                radioButton = findViewById(binding.rgGender.getCheckedRadioButtonId());
+//                RadioButton radioButton = (RadioButton) findViewById(binding.rgGender.getCheckedRadioButtonId());
+//                selectedRadioButtonText = radioButton.getText().toString();
             }
         });
         binding.btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                dbAdapter.upDataRecord(context, rowId, fName, lName, email, phoneNo, radioButton.getText().toString());
-
+                dbAdapter.upDataRecord(context, rowId, fName, lName, email, phoneNo, "Male");
+                dialog.dismiss();
             }
         });
         dialog.show();
+    }
+
+    @Override
+    public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+        clickedPosition = i;
+        return false;
     }
 }

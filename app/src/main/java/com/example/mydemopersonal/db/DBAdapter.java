@@ -86,6 +86,26 @@ public class DBAdapter {
 
     }
 
+    //TODO : Delete single record
+    public void deleteSingleRecord(Context context, String rowId){
+        int deletedRow = sqLiteDatabase.delete(TABLENAME, ROWID+"="+rowId, null);
+        if (deletedRow > 0){
+            Util.showCustomToast(context, ""+deletedRow +" data deleted successfully");
+        }else {
+            Util.showCustomToast(context, "deletion failed");
+        }
+    }
+
+    //TODO : Delete All records
+    public void deleteAllRecords(Context context){
+        int deletedRow = sqLiteDatabase.delete(TABLENAME, null, null);
+        if (deletedRow > 0){
+            Util.showCustomToast(context, ""+deletedRow +" data deleted successfully");
+        }else {
+            Util.showCustomToast(context, "deletion failed");
+        }
+    }
+
     class MyDBHelper extends SQLiteOpenHelper{
         public MyDBHelper(@Nullable Context context) {
             super(context, DBNAME, null, DBVERSION);

@@ -6,6 +6,7 @@ import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.databinding.DataBindingUtil;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +16,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.PopupMenu;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private String userId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
                 intent.putExtra("seriazableData", data);
                 startActivity(intent);
-
+//                hideSoftKeyboard(binding.btnSubmit);
             }
         });
 
@@ -207,6 +212,20 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    public void hideSoftKeyboard(View view) {
+        if (view == null) {
+            view = this.getCurrentFocus();
+        }
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        if (inputMethodManager != null) {
+            if (view != null) {
+                inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
+        }
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
     }
 
 

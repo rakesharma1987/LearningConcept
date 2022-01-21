@@ -1,8 +1,10 @@
 package com.example.mydemopersonal.sqliteDbConcepts;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -33,7 +35,10 @@ public class RecyclerviewActivity extends AppCompatActivity {
         dbAdapter = new DBAdapter(context);
         dbAdapter.openDatabase();
         recyclerView = findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+//        recyclerView.setLayoutManager(new LinearLayoutManager(context));
+//        GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 2);
+        StaggeredGridLayoutManager gridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        recyclerView.setLayoutManager(gridLayoutManager);
 
         loadDataToRecyclerView();
 
