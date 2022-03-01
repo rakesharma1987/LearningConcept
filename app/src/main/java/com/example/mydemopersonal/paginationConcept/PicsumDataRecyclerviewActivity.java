@@ -31,7 +31,7 @@ public class PicsumDataRecyclerviewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityPicsumDataRecyclerviewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        binding.recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         getPicSumDataServiceCall();
 
@@ -59,6 +59,7 @@ public class PicsumDataRecyclerviewActivity extends AppCompatActivity {
                 binding.progressBar.setVisibility(View.GONE);
                 List<PicsumListData> data = response.body();
                 PicsumRecyclerviewAdapter picsumRecyclerviewAdapter = new PicsumRecyclerviewAdapter(PicsumDataRecyclerviewActivity.this, data);
+                binding.recyclerView.setLayoutManager(new LinearLayoutManager(PicsumDataRecyclerviewActivity.this));
                 binding.recyclerView.setAdapter(picsumRecyclerviewAdapter);
                 picsumRecyclerviewAdapter.notifyDataSetChanged();
 
