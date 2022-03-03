@@ -33,8 +33,8 @@ public class UserActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_user);
-        appDataBase = Room.databaseBuilder(UserActivity.this, AppDataBase.class, "UserDb").build();
-        UserDao userDao = appDataBase.userDao();
+//        appDataBase = Room.databaseBuilder(UserActivity.this, AppDataBase.class, "UserDb").build();
+//        UserDao userDao = appDataBase.userDao();
         binding.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
