@@ -37,10 +37,11 @@ android {
 }
 
 dependencies {
+    def lifecycle_version = "2.5.0-alpha04"
 
     implementation 'com.google.android.gms:play-services-maps:17.0.1'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+//    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
+//    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
     implementation 'com.google.firebase:firebase-inappmessaging-display:20.1.1'
     // library for autocomplete place
     implementation 'com.google.android.libraries.places:places:2.4.0'
@@ -103,6 +104,13 @@ dependencies {
 
     //Pagging library
     implementation "androidx.paging:paging-runtime:3.1.0"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
 
 
 }
