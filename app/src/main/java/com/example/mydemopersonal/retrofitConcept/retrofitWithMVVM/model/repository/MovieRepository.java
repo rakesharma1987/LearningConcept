@@ -1,11 +1,13 @@
-package com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.model;
+package com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.model.repository;
 
 import android.app.Application;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.mydemopersonal.R;
-import com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.services.ApiEndPoints;
-import com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.services.RetrofitInstance;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.model.response.MovieDBResponse;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.model.pojo.Movie;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.services.ApiEndPoints;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.services.RetrofitInstance;
 
 import java.util.ArrayList;
 import java.util.List;

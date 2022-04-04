@@ -1,4 +1,4 @@
-package com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.viewmodel;
+package com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.viewmodel;
 
 import android.app.Application;
 
@@ -6,8 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
-import com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.model.Movie;
-import com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.model.MovieRepository;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.model.pojo.Movie;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.model.repository.MovieRepository;
 
 import java.util.List;
 

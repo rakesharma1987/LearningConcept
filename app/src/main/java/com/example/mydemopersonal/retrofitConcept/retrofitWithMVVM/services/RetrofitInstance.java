@@ -1,4 +1,4 @@
-package com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.services;
+package com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.services;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

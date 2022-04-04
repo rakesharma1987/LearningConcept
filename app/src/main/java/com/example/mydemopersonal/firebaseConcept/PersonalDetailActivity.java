@@ -12,7 +12,6 @@ import android.widget.RadioButton;
 import com.example.mydemopersonal.R;
 import com.example.mydemopersonal.databinding.ActivityPersonalDetailBinding;
 import com.example.mydemopersonal.model.PersonalData;
-import com.example.mydemopersonal.model.PersonalDataDao;
 import com.example.mydemopersonal.utility.Util;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;

@@ -54,15 +54,17 @@ public class NotificationActivity extends AppCompatActivity {
         intent.putExtra("notification_data", "Here is the discription");
         PendingIntent pendingIntent2 = PendingIntent.getActivity(NotificationActivity.this, 0, intent2, PendingIntent.FLAG_UPDATE_CURRENT);
 
+        //Reply action
+        RemoteInput remoteInput = new RemoteInput.Builder(keyReply)
+                .setLabel("Enter your name")
+                .build();
+
         Intent intentReply = new Intent(NotificationActivity.this, ReceiveReplyActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         intent.putExtra("notification_data", "Here is the discription");
         PendingIntent replyPendeingIntent = PendingIntent.getActivity(NotificationActivity.this, 0, intentReply, PendingIntent.FLAG_UPDATE_CURRENT);
 
-        //Reply action
-        RemoteInput remoteInput = new RemoteInput.Builder(keyReply)
-                .setLabel("Enter your name")
-                .build();
+
         NotificationCompat.Action replyAction =
                 new NotificationCompat.Action.Builder(0,
                         "Reply", replyPendeingIntent)
@@ -75,11 +77,12 @@ public class NotificationActivity extends AppCompatActivity {
         notification.setContentText("This is demo content, This is demo content,This is demo content, This is demo content, This is demo content");
         notification.setSmallIcon(android.R.drawable.ic_btn_speak_now);
         notification.setPriority(NotificationCompat.PRIORITY_DEFAULT);
-        notification.setAutoCancel(true);
         notification.setContentIntent(pendingIntent);
+        notification.setAutoCancel(true);
         notification.addAction(R.drawable.ic_alarm, "Details", pendingIntent1);
         notification.addAction(0, "Settings", pendingIntent2);
         notification.addAction(replyAction);
+
         notificationManager.notify(notificationId, notification.build());
 
     }

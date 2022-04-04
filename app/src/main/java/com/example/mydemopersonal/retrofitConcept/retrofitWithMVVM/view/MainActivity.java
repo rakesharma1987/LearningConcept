@@ -1,4 +1,4 @@
-package com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.view;
+package com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.view;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.mydemopersonal.R;
-import com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.adapter.MovieAdapter;
-import com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.model.Movie;
-import com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.viewmodel.MainActivityViewModel;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.adapter.MovieAdapter;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.model.pojo.Movie;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.viewmodel.MainActivityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

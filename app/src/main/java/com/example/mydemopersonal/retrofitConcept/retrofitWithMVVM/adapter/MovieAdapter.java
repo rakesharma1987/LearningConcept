@@ -1,4 +1,4 @@
-package com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.adapter;
+package com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.mydemopersonal.R;
-import com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.model.Movie;
-import com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.view.MovieActivity;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.model.pojo.Movie;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.view.MovieActivity;
 
 import java.util.ArrayList;
 

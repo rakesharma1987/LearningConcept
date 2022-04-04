@@ -1,4 +1,4 @@
-package com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.view;
+package com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.example.mydemopersonal.R;
-import com.example.mydemopersonal.retrofitConcept.RetrofitWithMVVM.model.Movie;
+import com.example.mydemopersonal.retrofitConcept.retrofitWithMVVM.model.pojo.Movie;
 
 public class MovieActivity extends AppCompatActivity {
 

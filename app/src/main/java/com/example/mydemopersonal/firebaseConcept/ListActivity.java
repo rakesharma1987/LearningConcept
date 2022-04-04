@@ -4,15 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.example.mydemopersonal.R;
 import com.example.mydemopersonal.adapters.PersonalDataAdapter;
 import com.example.mydemopersonal.databinding.ActivityListBinding;
 import com.example.mydemopersonal.model.PersonalData;
-import com.example.mydemopersonal.model.PersonalDataDao;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -38,10 +37,12 @@ public class ListActivity extends AppCompatActivity {
         dao = new PersonalDataDao();
         loadData();
 
+
+
     }
 
     private void loadData() {
-        dao.get(key).addListenerForSingleValueEvent(new ValueEventListener() {
+        dao.get().addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 List<PersonalData> list = new ArrayList<>();
@@ -57,7 +58,7 @@ public class ListActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Log.d("tag", error.getDetails());
             }
         });
     }

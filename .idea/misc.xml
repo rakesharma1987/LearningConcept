@@ -27,6 +27,8 @@
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_email_password.xml" value="0.21927083333333333" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_fcmactivity.xml" value="0.21927083333333333" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_firebase_banner_ad.xml" value="0.21927083333333333" />
+        <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_firebase_push_notification.xml" value="0.21927083333333333" />
+        <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_first.xml" value="0.21927083333333333" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_frag_interaction.xml" value="0.2234375" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_fragment2_fragment_communoication.xml" value="0.2234375" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_fragment_lifecycle.xml" value="0.20208333333333334" />
@@ -38,6 +40,8 @@
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_main3.xml" value="0.21927083333333333" />
+        <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_main4.xml" value="0.21927083333333333" />
+        <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_main5.xml" value="0.21927083333333333" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_main_two_way.xml" value="0.21927083333333333" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_map.xml" value="0.24375" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/activity_maps.xml" value="0.24375" />
@@ -89,6 +93,7 @@
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/fragment_send.xml" value="0.2234375" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/id_layout.xml" value="0.2234375" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/layout_images.xml" value="0.21927083333333333" />
+        <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/layout_post_data_items.xml" value="0.1" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/layout_user_items.xml" value="0.21927083333333333" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/list_item.xml" value="0.2234375" />
         <entry key="..\:/AndroidProject/Rakesh_12Pm/MyDemoPersonal/app/src/main/res/layout/listview_person_data.xml" value="0.25416666666666665" />
