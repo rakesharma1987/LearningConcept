@@ -109,7 +109,5 @@ public class PersonalDetailActivity extends AppCompatActivity implements View.On
                 startActivity(new Intent(PersonalDetailActivity.this, ListActivity.class));
                 break;
         }
-
-
     }
 }

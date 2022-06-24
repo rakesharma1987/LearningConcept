@@ -19,4 +19,7 @@ public interface ApiEndPoints {
 
     @GET("v2/list")
     Call<List<PicsumListData>> getPicSumData(@Query("page") int page, @Query("limit") int limit);
+
+    @GET("movie/popular")
+    Call<MovieDBResponse> getPopularMoviesWithPagging(@Query("api_key") String apiKey, @Query("page") int page);
 }
