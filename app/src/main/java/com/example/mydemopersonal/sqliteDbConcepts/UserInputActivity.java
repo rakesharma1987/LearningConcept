@@ -57,7 +57,7 @@ public class UserInputActivity extends AppCompatActivity implements View.OnClick
         switch (view.getId()){
             case R.id.btnSubmit:
                 RadioButton radioButton = (RadioButton) findViewById(binding.rgGender.getCheckedRadioButtonId());
-                dbAdapter.insertData(context, binding.etFname.getText().toString(), binding.etLname.getText().toString(), binding.etEmail.getText().toString(), binding.etPhone.getText().toString(), radioButton.getText().toString(), imageDataBase64);
+                dbAdapter.insertData(context, binding.etFname.getText().toString(), binding.etLname.getText().toString(), binding.etEmail.getText().toString(), binding.etPhone.getText().toString(), radioButton.getText().toString(), imageDataBase64, binding.etMname.getText().toString());
                 break;
             case R.id.btnShowPersonList:
                 startActivity(new Intent(context, PersonalDetailsList.class));

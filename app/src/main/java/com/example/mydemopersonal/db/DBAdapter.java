@@ -15,7 +15,7 @@ public class DBAdapter {
     public static final String DBNAME = "_personal_demo_";
 
     /* TODO : DATABASE VERSION */
-    public static final int DBVERSION = 1;
+    public static final int DBVERSION = 2;
 
     /*TODO : Table name*/
     public static final String TABLENAME = "demo";
@@ -28,12 +28,16 @@ public class DBAdapter {
     public static final String PHONE = "phone";
     public static final String GENDER = "gender";
     public static final String PHOTO = "photo";
+    public static final String MNAME = "mname";// This column created for db migration understanding concept
 
     private MyDBHelper myDBHelper;
     private SQLiteDatabase sqLiteDatabase;
 
 
-    private String SQL = "CREATE TABLE "+ TABLENAME +"("+ROWID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+FNAME+" text, "+LNAME+" text, "+EMAIL+" text, "+PHONE+" text, "+GENDER+" text, "+PHOTO+" TEXT)";
+//    private String SQL = "CREATE TABLE "+ TABLENAME +"("+ROWID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+FNAME+" text, "+LNAME+" text, "+EMAIL+" text, "+PHONE+" text, "+GENDER+" text, "+PHOTO+" TEXT)";
+
+    // Creating this news query if fresh application has installed in the device otherwise onUpgrade method will be called
+    private String SQL = "CREATE TABLE "+ TABLENAME +"("+ROWID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+FNAME+" text, "+LNAME+" text, "+EMAIL+" text, "+PHONE+" text, "+GENDER+" text, "+PHOTO+" text, "+MNAME+" text)";
 
     public DBAdapter(@Nullable Context context) {
         myDBHelper = new MyDBHelper(context);
@@ -49,7 +53,7 @@ public class DBAdapter {
     }
 
     // TODO : method to insert data into DB
-    public void insertData(Context context, String fName, String lName, String email, String phone, String gender, String imageInbase64){
+    public void insertData(Context context, String fName, String lName, String email, String phone, String gender, String imageInbase64, String mName){
         ContentValues contentValues = new ContentValues();
         contentValues.put(FNAME, fName);
         contentValues.put(LNAME, lName);
@@ -57,6 +61,7 @@ public class DBAdapter {
         contentValues.put(PHONE, phone);
         contentValues.put(GENDER, gender);
         contentValues.put(PHOTO, imageInbase64);
+        contentValues.put(MNAME, mName);
         long id = sqLiteDatabase.insert(TABLENAME, null, contentValues);
         if (id == -1){
             Util.showCustomToast(context, "Insertion falid.");
@@ -119,8 +124,9 @@ public class DBAdapter {
         @Override
         public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
             //TODO : need to implement
-            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLENAME);
-            onCreate(sqLiteDatabase);
+//            sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLENAME);
+//            onCreate(sqLiteDatabase);
+            sqLiteDatabase.execSQL("ALTER TABLE "+TABLENAME+" ADD COLUMN "+MNAME); // This will called when  db will migrate
 
         }
     }

@@ -360,10 +360,10 @@
             android:name=".notification.FCMActivity"
             android:exported="true">
 
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+            <!--            <intent-filter>-->
+            <!--                <action android:name="android.intent.action.MAIN" />-->
+            <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".googleApiIntegration.GoogleSignInDetailsActivity"
@@ -392,13 +392,10 @@
         <activity
             android:name=".notification.NotificationActivity"
             android:exported="true">
-
-             <intent-filter>
-             <action android:name="android.intent.action.MAIN" />
-
-
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+            <!--             <intent-filter>-->
+            <!--             <action android:name="android.intent.action.MAIN" />-->
+            <!--             <category android:name="android.intent.category.LAUNCHER" />-->
+            <!--             </intent-filter>-->
         </activity>
         <activity
             android:name=".cameraApi.CameraActivity"
@@ -477,11 +474,10 @@
             android:name=".sqliteDbConcepts.UserInputActivity"
             android:exported="true"
             android:label="User Input">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".locationConcept.CurrentLocationActivity"
@@ -491,7 +487,6 @@
             <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             -->
