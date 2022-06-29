@@ -39,9 +39,14 @@ public class UserActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 user = new User(binding.etFname.getText().toString(), binding.etLname.getText().toString(), binding.etEmail.getText().toString(),
-                        binding.etPhone.getText().toString());
-                InsertUsertask insertUsertask = new InsertUsertask();
-                insertUsertask.execute(Collections.singletonList(user));
+                        binding.etPhone.getText().toString(), binding.etMname.getText().toString());
+                // Below code access the Room DB only from background thread
+//                InsertUsertask insertUsertask = new InsertUsertask();
+//                insertUsertask.execute(Collections.singletonList(user));
+
+                // For Accessing Room DB from main thread
+                UserDao userDao = AppDataBase.getInstance(UserActivity.this).userDao();
+                userDao.insertUser(user);
             }
         });
 
